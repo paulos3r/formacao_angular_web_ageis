@@ -1,8 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 body{
+  box-sizing: border-box;
+  height: 100vh;
   background-color: #131842;
   color: #fbf6e2;
 }
-strong{
+.apresentacao{
+  display: flex;
+  align-items: center;
+}
+.titulo-destaque{
   color: #e68369;
 }
 
