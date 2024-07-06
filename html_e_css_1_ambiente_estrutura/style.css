@@ -1,4 +1,18 @@
 body{
-  background-color: black;
-  color: white;
+  background-color: #131842;
+  color: #fbf6e2;
+}
+strong{
+  color: #e68369;
+}
+
+.palheta_color{
+  color: #131842;
+  color: #e68369;
+  color: #ecceae;
+  color: #fbf6e2;
+  color: rgba(19, 24, 66);
+  color: rgb(230, 131, 105);
+  color: rgb(236, 206, 174);
+  color: rgb(251, 246, 226);
 }
