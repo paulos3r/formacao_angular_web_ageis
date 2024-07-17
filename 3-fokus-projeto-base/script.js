@@ -5,22 +5,38 @@ const longoBtn = document.querySelector('.app__card-button--longo');
 const banner = document.querySelector('.app__image');
 const titulo = document.querySelector('.app__title');
 const subtituloStrong = document.querySelector('.app__title-strong');
+const botoes = document.querySelectorAll('.app__card-button');
+const alternarMusica = document.querySelector('#alternar-musica');
+const musica = new Audio('/sons/luna-rise-part-one.mp3');
+
+musica.loop = true;
+
+alternarMusica.addEventListener('change', ()=>{
+  musica.paused ? musica.play() : musica.pause();
+})
 
 focoBtn.addEventListener('click', ()=>{
   alterarContexto('foco');
+  focoBtn.classList.add('active');
 });
 
 curtoBtn.addEventListener('click', ()=>{
   alterarContexto('descanso-curto');
+  curtoBtn.classList.add('active');
 });
 
 longoBtn.addEventListener('click', ()=>{
   alterarContexto('descanso-longo');
+  longoBtn.classList.add('active');
 });
 
 function alterarContexto(contexto){
   html.setAttribute('data-contexto',contexto);
   banner.setAttribute('src',`/imagens/${contexto}.png`);
+  botoes.forEach(function(contexto){
+    contexto.classList.remove('active');
+  });
+
   switch (contexto) {
     case "foco":
       titulo.innerHTML  = `Otimize sua produtividade, <br> <strong class="app__title-strong">mergulhe no que importa.</strong>`;
